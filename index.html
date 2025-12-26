@@ -3,166 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت جمشیدی | Jamshidi Shop</title>
+    <title>سایت جمشیدی | فروشگاه تخصصی</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --gold: #c5a059;
-            --light: #f8f9fa;
+            --digi-red: #ef4056;
+            --digi-dark: #3f4044;
+            --bg-gray: #f0f0f1;
+            --white: #ffffff;
         }
 
-        body { font-family: 'Tahoma', sans-serif; margin: 0; background: #fdfdfd; color: #333; }
+        body { font-family: 'Tahoma', sans-serif; margin: 0; background: var(--bg-gray); color: var(--digi-dark); scroll-behavior: smooth; }
 
-        /* طراحی جدید بالای سایت */
-        .top-nav {
-            background: linear-gradient(to left, #1a1a2e, #2c3e50);
-            color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--gold);
-        }
+        /* هدر شبیه دیجی‌کالا */
+        header { background: var(--white); padding: 15px 5%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-main { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: var(--digi-red); text-decoration: none; }
+        
+        /* فهرست دسته‌بندی */
+        nav { background: var(--white); border-bottom: 1px solid #e0e0e2; padding: 10px 5%; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: #62666d; font-size: 0.9rem; font-weight: bold; padding-bottom: 5px; }
+        nav a:hover { color: var(--digi-red); border-bottom: 2px solid var(--digi-red); }
 
-        .logo-area h1 { margin: 0; font-size: 1.8rem; color: var(--gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        /* بخش محصولات */
+        .container { max-width: 1300px; margin: 20px auto; padding: 0 20px; }
+        .section-title { background: var(--white); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-right: 5px solid var(--digi-red); }
 
-        .nav-links a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.95rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
-
-        /* سبد خرید شناور */
-        .cart-box {
-            background: white;
-            border: 2px solid var(--gold);
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        
+        .card {
+            background: var(--white);
+            border-radius: 8px;
             padding: 15px;
-            border-radius: 10px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid transparent;
+        }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #eee; }
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
+        .card h3 { font-size: 0.95rem; margin: 10px 0; height: 40px; overflow: hidden; }
+        .price-box { text-align: left; margin-top: 10px; }
+        .price { color: #080a0a; font-size: 1.1rem; font-weight: bold; }
+        .btn-add {
+            background: var(--digi-red);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* سبد خرید ثابت */
+        .cart-status {
             position: fixed;
             left: 20px;
             bottom: 20px;
-            width: 250px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            background: var(--digi-red);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(239, 64, 86, 0.4);
+            cursor: pointer;
             z-index: 1001;
         }
 
-        /* بخش محصولات */
-        .container { max-width: 1200px; margin: 30px auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
-        .card:hover { transform: scale(1.03); border-color: var(--gold); }
-        .card img { width: 100%; height: 180px; object-fit: cover; }
-        .card-info { padding: 15px; text-align: center; }
-        
-        .btn-buy {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .btn-buy:hover { background: var(--gold); }
-
-        footer { background: #1a1a2e; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+        footer { background: var(--white); padding: 40px 5%; margin-top: 50px; text-align: center; border-top: 1px solid #e0e0e2; }
     </style>
 </head>
 <body>
 
-    <div class="top-nav">
-        <div class="logo-area">
-            <h1>سایت جـمشیدی</h1>
-            <small>مدیریت: حسین جمشیدی‌فر</small>
+    <header>
+        <div class="header-main">
+            <a href="#" class="logo">سایت جـمشیدی</a>
+            <div id="clock" style="font-weight: bold;"></div>
         </div>
-        <div class="nav-links">
-            <a href="#">خانه</a>
-            <a href="#shop">محصولات دیجیتال</a>
-            <a href="#shop">پوشاک</a>
-            <a href="#contact">تماس با ما</a>
-        </div>
-        <div id="clock" style="color: var(--gold); font-weight: bold;"></div>
+    </header>
+
+    <nav>
+        <a href="#digital">کالای دیجیتال</a>
+        <a href="#gaming">گیمینگ</a>
+        <a href="#accessories">لوازم جانبی</a>
+        <a href="#contact">پشتیبانی</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="section-title" id="digital"><h2>کالای دیجیتال</h2></div>
+        <div class="product-grid" id="grid-digital"></div>
+
+        <div class="section-title" id="gaming"><h2>تجهیزات گیمینگ</h2></div>
+        <div class="product-grid" id="grid-gaming"></div>
+
+        <div class="section-title" id="accessories"><h2>لوازم جانبی و ذخیره‌سازی</h2></div>
+        <div class="product-grid" id="grid-acc"></div>
+
     </div>
 
-    <div class="container" id="shop">
-        <div class="grid" id="product-list">
-            </div>
-    </div>
-
-    <div class="cart-box">
-        <h4 style="margin:0 0 10px 0;">🛒 سبد خرید</h4>
-        <div id="cart-items" style="font-size: 0.85rem; max-height: 150px; overflow-y: auto;"></div>
-        <hr>
-        <strong>جمع کل: <span id="total-price">۰</span> تومان</strong>
-        <button onclick="clearCart()" style="margin-top:10px; font-size: 0.7rem;">خالی کردن</button>
+    <div class="cart-status" onclick="alert('جمع کل خرید شما: ' + total.toLocaleString('fa-IR') + ' تومان')">
+        🛒 سبد خرید: <span id="cart-count">۰</span> کالا
     </div>
 
     <footer id="contact">
-        <p>طراحی شده برای فروشگاه جمشیدی | حسین جمشیدی‌فر</p>
-        <p id="full-date"></p>
+        <p>مدیریت فروشگاه: <strong>حسین جمشیدی‌فر</strong></p>
+        <p>تمامی کالاها دارای ضمانت اصالت هستند.</p>
     </footer>
 
     <script>
         const products = [
-            { id: 1, name: "هدست گیمینگ RGB", price: 1200000, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
-            { id: 2, name: "ساعت هوشمند طلایی", price: 3500000, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
-            { id: 3, name: "لپ‌تاپ استوک مهندسی", price: 25000000, img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
-            { id: 4, name: "ماوس مخصوص بازی", price: 850000, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" },
-            { id: 5, name: "کیبورد مکانیکی تایپ", price: 1900000, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=400" },
-            { id: 6, name: "اسپیکر خانگی قدرتمند", price: 2100000, img: "https://images.unsplash.com/photo-1608156639585-34a070a04406?w=400" },
-            { id: 7, name: "گوشی موبایل آخرین مدل", price: 42000000, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
-            { id: 8, name: "کابل شارژ فست", price: 150000, img: "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=400" },
-            { id: 9, name: "پاوربانک ۲۰۰۰۰", price: 1400000, img: "https://images.unsplash.com/photo-1609592806457-482a1e18453a?w=400" },
-            { id: 10, name: "هارد اکسترنال ۱ ترابایت", price: 3200000, img: "https://images.unsplash.com/photo-1531062991700-4034714e10fb?w=400" }
+            // دیجیتال
+            { cat: 'digital', name: "گوشی موبایل سامسونگ S23", price: 45000000, img: "https://p-m-static.pishran.com/media/product/2023/02/s23-ultra-cream.jpg" },
+            { cat: 'digital', name: "لپ‌تاپ ایسوس مدل Vivobook", price: 32000000, img: "https://m.media-amazon.com/images/I/71Yvdfv2mYL._AC_SL1500_.jpg" },
+            { cat: 'digital', name: "تبلت اپل iPad Air", price: 28500000, img: "https://m.media-amazon.com/images/I/61XZQX8n3sL._AC_SL1500_.jpg" },
+            { cat: 'digital', name: "ساعت هوشمند اپل واچ", price: 18000000, img: "https://m.media-amazon.com/images/I/71YIDU9AsvL._AC_SL1500_.jpg" },
+            
+            // گیمینگ
+            { cat: 'gaming', name: "کنسول پلی استیشن 5", price: 29000000, img: "https://m.media-amazon.com/images/I/619BkvKW35L._AC_SL1500_.jpg" },
+            { cat: 'gaming', name: "هدست گیمینگ ریزر", price: 4200000, img: "https://m.media-amazon.com/images/I/718Vv9E9S2L._AC_SL1500_.jpg" },
+            { cat: 'gaming', name: "ماوس گیمینگ لاجیتک", price: 2100000, img: "https://m.media-amazon.com/images/I/61U7486nAYL._AC_SL1500_.jpg" },
+            { cat: 'gaming', name: "کیبورد مکانیکی کورسیر", price: 5800000, img: "https://m.media-amazon.com/images/I/716m6WfO8kL._AC_SL1500_.jpg" },
+            { cat: 'gaming', name: "صندلی گیمینگ دی ایکس ریسر", price: 12500000, img: "https://m.media-amazon.com/images/I/61N+h5-F3yL._AC_SL1000_.jpg" },
+            { cat: 'gaming', name: "مانیتور مخصوص بازی", price: 14000000, img: "https://m.media-amazon.com/images/I/81B8X+YpEKL._AC_SL1500_.jpg" },
+
+            // لوازم جانبی
+            { cat: 'acc', name: "هارد اکسترنال وسترن دیجیتال ۲ ترابایت", price: 3800000, img: "https://m.media-amazon.com/images/I/81tjLksKixL._AC_SL1500_.jpg" },
+            { cat: 'acc', name: "پاوربانک ۲۰۰۰۰ شیائومی", price: 1600000, img: "https://m.media-amazon.com/images/I/517f8rRIdrL._AC_SL1000_.jpg" },
+            { cat: 'acc', name: "هارد اکسترنال ای دیتا ضد ضربه", price: 4100000, img: "https://m.media-amazon.com/images/I/718DOnF3ZBL._AC_SL1500_.jpg" },
+            { cat: 'acc', name: "پاوربانک انکر فست شارژ", price: 2900000, img: "https://m.media-amazon.com/images/I/61f4p1f0P1L._AC_SL1500_.jpg" },
+            { cat: 'acc', name: "فلش مموری ۶۴ گیگابایت", price: 350000, img: "https://m.media-amazon.com/images/I/61mI0XQ87+L._AC_SL1200_.jpg" },
+            { cat: 'acc', name: "کابل شارژ با کیفیت", price: 200000, img: "https://m.media-amazon.com/images/I/61-mI5S10YL._AC_SL1500_.jpg" }
         ];
 
-        let cart = [];
         let total = 0;
+        let count = 0;
 
-        function renderProducts() {
-            const list = document.getElementById('product-list');
+        function render() {
             products.forEach(p => {
-                list.innerHTML += `
+                const targetGrid = document.getElementById('grid-' + p.cat);
+                const html = `
                     <div class="card">
                         <img src="${p.img}" alt="${p.name}">
-                        <div class="card-info">
-                            <h4>${p.name}</h4>
-                            <p style="color:green">${p.price.toLocaleString('fa-IR')} تومان</p>
-                            <button class="btn-buy" onclick="addToCart('${p.name}', ${p.price})">افزودن به سبد</button>
+                        <div>
+                            <h3>${p.name}</h3>
+                            <div class="price-box">
+                                <span class="price">${p.price.toLocaleString('fa-IR')} تومان</span>
+                            </div>
+                            <button class="btn-add" onclick="buy(${p.price})">افزودن به سبد</button>
                         </div>
                     </div>
                 `;
+                targetGrid.innerHTML += html;
             });
         }
 
-        function addToCart(name, price) {
-            cart.push({name, price});
+        function buy(price) {
             total += price;
-            updateCartUI();
+            count++;
+            document.getElementById('cart-count').innerText = count.toLocaleString('fa-IR');
         }
 
-        function updateCartUI() {
-            const itemsDiv = document.getElementById('cart-items');
-            itemsDiv.innerHTML = cart.map(i => `<div>${i.name} - ${i.price.toLocaleString('fa-IR')}</div>`).join('');
-            document.getElementById('total-price').innerText = total.toLocaleString('fa-IR');
+        function clock() {
+            document.getElementById('clock').innerText = new Date().toLocaleTimeString('fa-IR');
         }
 
-        function clearCart() { cart = []; total = 0; updateCartUI(); }
-
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').innerText = now.toLocaleTimeString('fa-IR');
-            document.getElementById('full-date').innerText = now.toLocaleDateString('fa-IR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
-        }
-
-        setInterval(updateClock, 1000);
-        renderProducts();
-        updateClock();
+        setInterval(clock, 1000);
+        render();
+        clock();
     </script>
 </body>
 </html>
