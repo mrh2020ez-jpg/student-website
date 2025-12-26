@@ -3,167 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه آنلاین جمشیدی | Jamshidi Shop</title>
+    <title>سایت جمشیدی | Jamshidi Shop</title>
     <style>
         :root {
-            --gold: #d4af37;
-            --dark: #1a1a2e;
-            --accent: #27ae60;
+            --primary: #2c3e50;
+            --gold: #c5a059;
+            --light: #f8f9fa;
         }
 
-        body {
-            font-family: 'Tahoma', sans-serif;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
+        body { font-family: 'Tahoma', sans-serif; margin: 0; background: #fdfdfd; color: #333; }
 
-        /* نوار وضعیت بالا */
-        .top-bar {
-            background: var(--dark);
+        /* طراحی جدید بالای سایت */
+        .top-nav {
+            background: linear-gradient(to left, #1a1a2e, #2c3e50);
             color: white;
-            padding: 10px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            border-bottom: 2px solid var(--gold);
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
         }
 
-        /* هدر و فهرست */
-        header {
+        .logo-area h1 { margin: 0; font-size: 1.8rem; color: var(--gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+
+        .nav-links a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* سبد خرید شناور */
+        .cart-box {
             background: white;
-            text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 2px solid var(--gold);
+            padding: 15px;
+            border-radius: 10px;
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 250px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1001;
         }
-
-        nav {
-            background: var(--dark);
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--gold); }
 
         /* بخش محصولات */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
+        .container { max-width: 1200px; margin: 30px auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        
         .card {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border: 1px solid #eee;
-            text-align: center;
             transition: 0.3s;
         }
-
-        .card:hover { transform: translateY(-8px); border-color: var(--gold); }
-
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-
-        .card-body { padding: 15px; }
-
-        .price { color: var(--accent); font-weight: bold; font-size: 1.1rem; display: block; margin: 10px 0; }
-
-        .btn-add {
-            background: var(--dark);
+        .card:hover { transform: scale(1.03); border-color: var(--gold); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-info { padding: 15px; text-align: center; }
+        
+        .btn-buy {
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 10px;
-            width: 100%;
+            padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
         }
+        .btn-buy:hover { background: var(--gold); }
 
-        .btn-add:hover { background: var(--gold); }
-
-        footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div id="date">تاریخ</div>
-        <div id="clock">ساعت</div>
+    <div class="top-nav">
+        <div class="logo-area">
+            <h1>سایت جـمشیدی</h1>
+            <small>مدیریت: حسین جمشیدی‌فر</small>
+        </div>
+        <div class="nav-links">
+            <a href="#">خانه</a>
+            <a href="#shop">محصولات دیجیتال</a>
+            <a href="#shop">پوشاک</a>
+            <a href="#contact">تماس با ما</a>
+        </div>
+        <div id="clock" style="color: var(--gold); font-weight: bold;"></div>
     </div>
 
-    <header>
-        <h1>فروشگاه بزرگ جـمشیدی</h1>
-        <p>مدیریت: حسین جمشیدی‌فر</p>
-    </header>
-
-    <nav>
-        <a href="#">صفحه اصلی</a>
-        <a href="#products">فهرست محصولات</a>
-        <a href="#about">درباره ما</a>
-        <a href="#contact">پشتیبانی</a>
-    </nav>
-
-    <div class="container" id="products">
-        <div class="product-grid" id="grid">
+    <div class="container" id="shop">
+        <div class="grid" id="product-list">
             </div>
     </div>
 
+    <div class="cart-box">
+        <h4 style="margin:0 0 10px 0;">🛒 سبد خرید</h4>
+        <div id="cart-items" style="font-size: 0.85rem; max-height: 150px; overflow-y: auto;"></div>
+        <hr>
+        <strong>جمع کل: <span id="total-price">۰</span> تومان</strong>
+        <button onclick="clearCart()" style="margin-top:10px; font-size: 0.7rem;">خالی کردن</button>
+    </div>
+
     <footer id="contact">
-        <p>تمامی حقوق برای حسین جمشیدی‌فر محفوظ است &copy; ۲۰۲۵</p>
-        <p>تماس جهت پشتیبانی: ۰۹۱۲-XXX-XXXX</p>
+        <p>طراحی شده برای فروشگاه جمشیدی | حسین جمشیدی‌فر</p>
+        <p id="full-date"></p>
     </footer>
 
     <script>
         const products = [
-            { name: "هدست حرفه‌ای گیمینگ", price: "۱,۲۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
-            { name: "ساعت هوشمند نسل جدید", price: "۳,۵۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
-            { name: "دوربین عکاسی دیجیتال", price: "۱۵,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400" },
-            { name: "کفش ورزشی نایکی", price: "۲,۸۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" },
-            { name: "عینک آفتابی کلاسیک", price: "۹۵۰,۰۰۰", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" },
-            { name: "لپ‌تاپ گیمینگ ایسوس", price: "۴۵,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
-            { name: "گوشی موبایل هوشمند", price: "۲۸,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
-            { name: "کیبورد مکانیکی", price: "۱,۸۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=400" },
-            { name: "ماوس بی‌سیم اپتیکال", price: "۶۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" },
-            { name: "اسپیکر بلوتوثی", price: "۲,۱۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1608156639585-34a070a04406?w=400" }
+            { id: 1, name: "هدست گیمینگ RGB", price: 1200000, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
+            { id: 2, name: "ساعت هوشمند طلایی", price: 3500000, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
+            { id: 3, name: "لپ‌تاپ استوک مهندسی", price: 25000000, img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
+            { id: 4, name: "ماوس مخصوص بازی", price: 850000, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" },
+            { id: 5, name: "کیبورد مکانیکی تایپ", price: 1900000, img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=400" },
+            { id: 6, name: "اسپیکر خانگی قدرتمند", price: 2100000, img: "https://images.unsplash.com/photo-1608156639585-34a070a04406?w=400" },
+            { id: 7, name: "گوشی موبایل آخرین مدل", price: 42000000, img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
+            { id: 8, name: "کابل شارژ فست", price: 150000, img: "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=400" },
+            { id: 9, name: "پاوربانک ۲۰۰۰۰", price: 1400000, img: "https://images.unsplash.com/photo-1609592806457-482a1e18453a?w=400" },
+            { id: 10, name: "هارد اکسترنال ۱ ترابایت", price: 3200000, img: "https://images.unsplash.com/photo-1531062991700-4034714e10fb?w=400" }
         ];
 
-        const grid = document.getElementById('grid');
-        products.forEach(p => {
-            grid.innerHTML += `
-                <div class="card">
-                    <img src="${p.img}" alt="${p.name}">
-                    <div class="card-body">
-                        <h3>${p.name}</h3>
-                        <span class="price">${p.price} تومان</span>
-                        <button class="btn-add" onclick="alert('${p.name} اضافه شد')">خرید محصول</button>
-                    </div>
-                </div>
-            `;
-        });
+        let cart = [];
+        let total = 0;
 
-        function updateTime() {
+        function renderProducts() {
+            const list = document.getElementById('product-list');
+            products.forEach(p => {
+                list.innerHTML += `
+                    <div class="card">
+                        <img src="${p.img}" alt="${p.name}">
+                        <div class="card-info">
+                            <h4>${p.name}</h4>
+                            <p style="color:green">${p.price.toLocaleString('fa-IR')} تومان</p>
+                            <button class="btn-buy" onclick="addToCart('${p.name}', ${p.price})">افزودن به سبد</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            total += price;
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const itemsDiv = document.getElementById('cart-items');
+            itemsDiv.innerHTML = cart.map(i => `<div>${i.name} - ${i.price.toLocaleString('fa-IR')}</div>`).join('');
+            document.getElementById('total-price').innerText = total.toLocaleString('fa-IR');
+        }
+
+        function clearCart() { cart = []; total = 0; updateCartUI(); }
+
+        function updateClock() {
             const now = new Date();
             document.getElementById('clock').innerText = now.toLocaleTimeString('fa-IR');
-            document.getElementById('date').innerText = now.toLocaleDateString('fa-IR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('full-date').innerText = now.toLocaleDateString('fa-IR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
         }
-        setInterval(updateTime, 1000);
-        updateTime();
+
+        setInterval(updateClock, 1000);
+        renderProducts();
+        updateClock();
     </script>
 </body>
 </html>
