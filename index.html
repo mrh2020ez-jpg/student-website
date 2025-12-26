@@ -1,44 +1,223 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>پروژه دانشجویی</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه آنلاین جمشیدی</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-blue: #1a1a2e;
+            --soft-white: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            background-color: var(--soft-white);
+            color: #333;
+        }
+
+        /* نوار بالای سایت (ساعت و تاریخ) */
+        .top-bar {
+            background: var(--dark-blue);
+            color: white;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* هدر اصلی */
+        header {
+            background: white;
+            padding: 20px 5%;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: var(--dark-blue);
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* فهرست (منو) */
+        nav {
+            background: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: bold;
+        }
+
+        /* محصولات */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price-tag {
+            display: block;
+            font-size: 1.3rem;
+            color: #27ae60;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .btn-buy {
+            background: var(--dark-blue);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-buy:hover {
+            background: var(--gold);
+        }
+
+        /* پشتیبانی */
+        .support {
+            background: #eef2f3;
+            padding: 40px 20px;
+            margin-top: 50px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>پروژه طراحی وب</h1>
-    <p>دانشجوی رشته مهندسی کامپیوتر</p>
-</header>
+    <div class="top-bar">
+        <div id="date-display">تاریخ شمسی</div>
+        <div id="clock-display">ساعت</div>
+    </div>
 
-<nav>
-    <a href="#">خانه</a>
-    <a href="#">درباره پروژه</a>
-    <a href="#">مهارت‌ها</a>
-    <a href="#">تماس</a>
-</nav>
+    <header>
+        <h1>فروشگاه بزرگ جـمشیدی</h1>
+        <p style="color: var(--gold);">تضمین کیفیت و اصالت کالا</p>
+    </header>
 
-<section>
-    <h2>درباره پروژه</h2>
-    <p>
-        این سایت به عنوان پروژه دانشگاهی طراحی شده
-        و هدف آن آشنایی با HTML و CSS است.
-    </p>
-</section>
+    <nav>
+        <a href="#">صفحه اصلی</a> |
+        <a href="#products">فهرست محصولات</a> |
+        <a href="#support">پشتیبانی</a>
+    </nav>
 
-<section>
-    <h2>مهارت‌ها</h2>
-    <ul>
-        <li>HTML مقدماتی</li>
-        <li>CSS مقدماتی</li>
-        <li>مفاهیم پایه برنامه‌نویسی</li>
-    </ul>
-</section>
+    <div class="container" id="products">
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="محصول ۱">
+                <div class="content">
+                    <h3>محصول ویژه شماره یک</h3>
+                    <p>توضیحات مربوط به کیفیت و ویژگی‌های محصول در این بخش قرار می‌گیرد.</p>
+                    <span class="price-tag">۴۵۰,۰۰۰ تومان</span>
+                    <button class="btn-buy" onclick="addToCart('محصول ۱')">افزودن به سبد</button>
+                </div>
+            </div>
 
-<footer>
-    <p>© 2025 پروژه دانشجویی</p>
-</footer>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="محصول ۲">
+                <div class="content">
+                    <h3>محصول ویژه شماره دو</h3>
+                    <p>بهترین انتخاب برای دانشجویان و اساتید محترم دانشگاه.</p>
+                    <span class="price-tag">۸۹۰,۰۰۰ تومان</span>
+                    <button class="btn-buy" onclick="addToCart('محصول ۲')">افزودن به سبد</button>
+                </div>
+            </div>
 
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500" alt="محصول ۳">
+                <div class="content">
+                    <h3>محصول ویژه شماره سه</h3>
+                    <p>ارسال سریع به تمام نقاط کشور با بسته‌بندی ایمن.</p>
+                    <span class="price-tag">۱,۲۰۰,۰۰۰ تومان</span>
+                    <button class="btn-buy" onclick="addToCart('محصول ۳')">افزودن به سبد</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="support" id="support">
+            <h2>📞 واحد پشتیبانی مشتریان</h2>
+            <p>ساعت کاری: ۸ صبح الی ۱۰ شب</p>
+            <p>مدیریت: <strong>حسین جمشیدی‌فر</strong></p>
+            <p>تلفن تماس: ۰۹۱۲-XXX-XXXX</p>
+        </div>
+    </div>
+
+    <footer>
+        تمامی حقوق برای فروشگاه جمشیدی محفوظ است &copy; <span id="year"></span>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            
+            document.getElementById('clock-display').innerText = now.toLocaleTimeString('fa-IR', timeOptions);
+            document.getElementById('date-display').innerText = now.toLocaleDateString('fa-IR', dateOptions);
+            document.getElementById('year').innerText = now.toLocaleDateString('fa-IR', {year: 'numeric'});
+        }
+
+        function addToCart(name) {
+            alert(name + " با موفقیت به سبد خرید شما اضافه شد!");
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
 </body>
 </html>
