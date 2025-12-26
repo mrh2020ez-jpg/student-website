@@ -3,221 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه آنلاین جمشیدی</title>
+    <title>فروشگاه آنلاین جمشیدی | Jamshidi Shop</title>
     <style>
         :root {
             --gold: #d4af37;
-            --dark-blue: #1a1a2e;
-            --soft-white: #f8f9fa;
+            --dark: #1a1a2e;
+            --accent: #27ae60;
         }
 
         body {
             font-family: 'Tahoma', sans-serif;
             margin: 0;
-            background-color: var(--soft-white);
-            color: #333;
+            background-color: #f4f4f9;
         }
 
-        /* نوار بالای سایت (ساعت و تاریخ) */
+        /* نوار وضعیت بالا */
         .top-bar {
-            background: var(--dark-blue);
+            background: var(--dark);
             color: white;
-            padding: 8px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-bottom: 2px solid var(--gold);
         }
 
-        /* هدر اصلی */
+        /* هدر و فهرست */
         header {
             background: white;
-            padding: 20px 5%;
             text-align: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            color: var(--dark-blue);
-            margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-        }
-
-        /* فهرست (منو) */
         nav {
-            background: #fff;
-            padding: 10px 0;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
+            background: var(--dark);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
-            margin: 0 15px;
+            color: white;
             text-decoration: none;
-            color: var(--dark-blue);
+            margin: 0 20px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* محصولات */
+        nav a:hover { color: var(--gold); }
+
+        /* بخش محصولات */
         .container {
             max-width: 1200px;
             margin: 40px auto;
-            padding: 0 20px;
+            padding: 20px;
         }
 
-        .grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
         }
 
         .card {
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #eee;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .content {
-            padding: 20px;
             text-align: center;
+            transition: 0.3s;
         }
 
-        .price-tag {
-            display: block;
-            font-size: 1.3rem;
-            color: #27ae60;
-            margin: 15px 0;
-            font-weight: bold;
-        }
+        .card:hover { transform: translateY(-8px); border-color: var(--gold); }
 
-        .btn-buy {
-            background: var(--dark-blue);
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+
+        .card-body { padding: 15px; }
+
+        .price { color: var(--accent); font-weight: bold; font-size: 1.1rem; display: block; margin: 10px 0; }
+
+        .btn-add {
+            background: var(--dark);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
+            padding: 10px;
             width: 100%;
-            transition: 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        .btn-buy:hover {
-            background: var(--gold);
-        }
+        .btn-add:hover { background: var(--gold); }
 
-        /* پشتیبانی */
-        .support {
-            background: #eef2f3;
-            padding: 40px 20px;
-            margin-top: 50px;
-            text-align: center;
-            border-radius: 20px;
-        }
-
-        footer {
-            background: var(--dark-blue);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+        footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div id="date-display">تاریخ شمسی</div>
-        <div id="clock-display">ساعت</div>
+        <div id="date">تاریخ</div>
+        <div id="clock">ساعت</div>
     </div>
 
     <header>
         <h1>فروشگاه بزرگ جـمشیدی</h1>
-        <p style="color: var(--gold);">تضمین کیفیت و اصالت کالا</p>
+        <p>مدیریت: حسین جمشیدی‌فر</p>
     </header>
 
     <nav>
-        <a href="#">صفحه اصلی</a> |
-        <a href="#products">فهرست محصولات</a> |
-        <a href="#support">پشتیبانی</a>
+        <a href="#">صفحه اصلی</a>
+        <a href="#products">فهرست محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">پشتیبانی</a>
     </nav>
 
     <div class="container" id="products">
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="محصول ۱">
-                <div class="content">
-                    <h3>محصول ویژه شماره یک</h3>
-                    <p>توضیحات مربوط به کیفیت و ویژگی‌های محصول در این بخش قرار می‌گیرد.</p>
-                    <span class="price-tag">۴۵۰,۰۰۰ تومان</span>
-                    <button class="btn-buy" onclick="addToCart('محصول ۱')">افزودن به سبد</button>
-                </div>
+        <div class="product-grid" id="grid">
             </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="محصول ۲">
-                <div class="content">
-                    <h3>محصول ویژه شماره دو</h3>
-                    <p>بهترین انتخاب برای دانشجویان و اساتید محترم دانشگاه.</p>
-                    <span class="price-tag">۸۹۰,۰۰۰ تومان</span>
-                    <button class="btn-buy" onclick="addToCart('محصول ۲')">افزودن به سبد</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500" alt="محصول ۳">
-                <div class="content">
-                    <h3>محصول ویژه شماره سه</h3>
-                    <p>ارسال سریع به تمام نقاط کشور با بسته‌بندی ایمن.</p>
-                    <span class="price-tag">۱,۲۰۰,۰۰۰ تومان</span>
-                    <button class="btn-buy" onclick="addToCart('محصول ۳')">افزودن به سبد</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="support" id="support">
-            <h2>📞 واحد پشتیبانی مشتریان</h2>
-            <p>ساعت کاری: ۸ صبح الی ۱۰ شب</p>
-            <p>مدیریت: <strong>حسین جمشیدی‌فر</strong></p>
-            <p>تلفن تماس: ۰۹۱۲-XXX-XXXX</p>
-        </div>
     </div>
 
-    <footer>
-        تمامی حقوق برای فروشگاه جمشیدی محفوظ است &copy; <span id="year"></span>
+    <footer id="contact">
+        <p>تمامی حقوق برای حسین جمشیدی‌فر محفوظ است &copy; ۲۰۲۵</p>
+        <p>تماس جهت پشتیبانی: ۰۹۱۲-XXX-XXXX</p>
     </footer>
 
     <script>
-        function updateDateTime() {
+        const products = [
+            { name: "هدست حرفه‌ای گیمینگ", price: "۱,۲۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" },
+            { name: "ساعت هوشمند نسل جدید", price: "۳,۵۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" },
+            { name: "دوربین عکاسی دیجیتال", price: "۱۵,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400" },
+            { name: "کفش ورزشی نایکی", price: "۲,۸۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" },
+            { name: "عینک آفتابی کلاسیک", price: "۹۵۰,۰۰۰", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" },
+            { name: "لپ‌تاپ گیمینگ ایسوس", price: "۴۵,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" },
+            { name: "گوشی موبایل هوشمند", price: "۲۸,۰۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" },
+            { name: "کیبورد مکانیکی", price: "۱,۸۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=400" },
+            { name: "ماوس بی‌سیم اپتیکال", price: "۶۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" },
+            { name: "اسپیکر بلوتوثی", price: "۲,۱۰۰,۰۰۰", img: "https://images.unsplash.com/photo-1608156639585-34a070a04406?w=400" }
+        ];
+
+        const grid = document.getElementById('grid');
+        products.forEach(p => {
+            grid.innerHTML += `
+                <div class="card">
+                    <img src="${p.img}" alt="${p.name}">
+                    <div class="card-body">
+                        <h3>${p.name}</h3>
+                        <span class="price">${p.price} تومان</span>
+                        <button class="btn-add" onclick="alert('${p.name} اضافه شد')">خرید محصول</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        function updateTime() {
             const now = new Date();
-            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            
-            document.getElementById('clock-display').innerText = now.toLocaleTimeString('fa-IR', timeOptions);
-            document.getElementById('date-display').innerText = now.toLocaleDateString('fa-IR', dateOptions);
-            document.getElementById('year').innerText = now.toLocaleDateString('fa-IR', {year: 'numeric'});
+            document.getElementById('clock').innerText = now.toLocaleTimeString('fa-IR');
+            document.getElementById('date').innerText = now.toLocaleDateString('fa-IR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         }
-
-        function addToCart(name) {
-            alert(name + " با موفقیت به سبد خرید شما اضافه شد!");
-        }
-
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
+        setInterval(updateTime, 1000);
+        updateTime();
     </script>
 </body>
 </html>
