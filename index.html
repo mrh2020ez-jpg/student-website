@@ -3,119 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR-NEW | خبرگزاری جامع ایران</title>
+    <title>سامانه هوشمند IR-Monitor | حسین جمشیدی</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="top-header">
-        <div class="container flex-row">
-            <span id="full-date"></span>
-            <div class="brand">IR-<span>NEW</span></div>
-            <div class="social-icons">اخبار لحظه‌ای ایران و جهان</div>
+    <aside class="sidebar">
+        <div class="logo">IR-<span>MONITOR</span></div>
+        <nav>
+            <a href="#" class="active">📊 داشبورد اصلی</a>
+            <a href="#economy">📈 تحلیل اقتصادی</a>
+            <li><a href="#cars">🚗 پایش بازار خودرو</a></li>
+            <li><a href="#tech">🛡️ امنیت و حوادث</a></li>
+            <li><a href="#sports">🏆 اخبار ورزشی</a></li>
+        </nav>
+        <div class="user-info">
+            <p>توسعه‌دهنده سیستم:</p>
+            <h4>حسین جمشیدی</h4>
         </div>
-    </div>
-    <nav class="main-nav">
-        <ul class="container">
-            <li><a href="#">صفحه اصلی</a></li>
-            <li><a href="#economy">اقتصاد</a></li>
-            <li><a href="#cars">خودرو</a></li>
-            <li><a href="#incidents">حوادث</a></li>
-            <li><a href="#sports">ورزش</a></li>
-        </ul>
-    </nav>
-</header>
+    </aside>
 
-<div class="container main-layout">
-    
-    <main class="news-content">
-        <section class="hero-news">
-            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=800&auto=format&fit=crop" alt="اقتصاد ایران">
-            <div class="hero-overlay">
-                <span class="badge">خبر ویژه</span>
-                <h2>تحلیل جامع بازار سرمایه و پیش‌بینی قیمت ارز در سال جدید</h2>
-                <p>کارشناسان معتقدند با سیاست‌های جدید پولی، بازار به ثبات نسبی خواهد رسید...</p>
+    <main class="main-content">
+        <header class="top-header">
+            <div class="search-box">جستجو در اخبار و شاخص‌ها...</div>
+            <div id="live-clock"></div>
+        </header>
+
+        <section class="stats-cards">
+            <div class="card-stat">
+                <span>طلای ۱۸ عیار</span>
+                <h3>۴,۷۲۰,۰۰۰ تومان</h3>
+                <small class="up">+۱.۲٪</small>
+            </div>
+            <div class="card-stat">
+                <span>شاخص کل بورس</span>
+                <h3>۲,۱۵۰,۴۳۰</h3>
+                <small class="down">-۰.۵٪</small>
+            </div>
+            <div class="card-stat">
+                <span>دلار صرافی ملی</span>
+                <h3>۵۴,۱۰۰ تومان</h3>
+                <small class="up">+۰.۸٪</small>
             </div>
         </section>
 
-        <section id="economy" class="category-section">
-            <h2 class="sec-title">اخبار اقتصادی</h2>
-            <div class="grid-container">
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1611974717482-48a66500b3c6?q=80&w=400&auto=format&fit=crop" alt="بورس">
-                    <h3>رشد شاخص کل در معاملات امروز</h3>
+        <section class="news-grid">
+            <article class="main-article" id="economy">
+                <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop" alt="بورس">
+                <div class="info">
+                    <span class="tag">ویژه اقتصاد</span>
+                    <h2>تحلیل ورود نقدینگی هوشمند به بازار سرمایه</h2>
+                    <p>گزارش‌ها نشان می‌دهد در ۲۴ ساعت گذشته حجم معاملات خرد به شدت افزایش یافته است...</p>
                 </div>
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1518458082568-695899983920?q=80&w=400&auto=format&fit=crop" alt="طلا">
-                    <h3>نوسان قیمت طلا در بازارهای جهانی</h3>
-                </div>
-            </div>
-        </section>
+            </article>
 
-        <section id="cars" class="category-section">
-            <h2 class="sec-title">صنعت خودرو</h2>
-            <div class="grid-container">
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=400&auto=format&fit=crop" alt="خودرو جدید">
-                    <h3>رونمایی از شاسی‌بلند جدید داخلی</h3>
+            <div class="side-articles">
+                <div class="mini-news" id="cars">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=200&auto=format&fit=crop">
+                    <h4>پیش‌فروش محصولات جدید از فردا</h4>
                 </div>
-                <div class="news-card">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=400&auto=format&fit=crop" alt="واردات">
-                    <h3>جزئیات جدید از طرح واردات خودرو</h3>
+                <div class="mini-news" id="tech">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=200&auto=format&fit=crop">
+                    <h4>پایش حملات سایبری به زیرساخت‌ها</h4>
                 </div>
-            </div>
-        </section>
-
-        <section id="incidents" class="category-section">
-            <h2 class="sec-title">حوادث</h2>
-            <div class="list-news">
-                <div class="list-item">
-                    <img src="https://images.unsplash.com/photo-1516567727245-ad8c68f3ec93?q=80&w=150&auto=format&fit=crop" alt="آتش سوزی">
-                    <div class="text">
-                        <h4>مهار حریق در جنگل‌های شمال کشور</h4>
-                        <p>تیم‌های امدادی پس از ۱۰ ساعت تلاش موفق به مهار آتش شدند.</p>
-                    </div>
+                <div class="mini-news" id="sports">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop">
+                    <h4>لیست نهایی تیم ملی برای مسابقات</h4>
                 </div>
             </div>
         </section>
     </main>
 
-    <aside class="sidebar">
-        <div class="widget">
-            <h3>📊 نرخ لحظه‌ای بازار</h3>
-            <ul class="price-list">
-                <li>طلا ۱۸ عیار: <span>۴,۶۸۰,۰۰۰</span></li>
-                <li>سکه امامی: <span>۵۲,۴۰۰,۰۰۰</span></li>
-                <li>دلار (مرکز مبادله): <span>۵۳,۲۰۰</span></li>
-                <li>تارا V4 اتومات: <span>۱,۱۹۰,۰۰۰,۰۰۰</span></li>
-                <li>پژو ۲۰۷: <span>۹۸۵,۰۰۰,۰۰۰</span></li>
-            </ul>
-        </div>
-        
-        <div class="widget">
-            <h3>⚽ ورزش ایران</h3>
-            <div class="sports-mini">
-                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=300&auto=format&fit=crop" alt="فوتبال">
-                <h4>لیست جدید تیم ملی اعلام شد</h4>
-            </div>
-        </div>
-    </aside>
-</div>
-
-<footer>
-    <div class="container footer-content">
-        <div class="about">
-            <h3>درباره IR-NEW</h3>
-            <p>این پروژه به عنوان فعالیت کلاسی طراحی شده است.</p>
-        </div>
-        <div class="credit">
-            <p>طراح و توسعه‌دهنده:</p>
-            <h2 class="my-name">حسین جمشیدی</h2>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
