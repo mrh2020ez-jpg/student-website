@@ -3,67 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR NEW | اخبار تازه ایران</title>
+    <title>IR NEW | خبرگزاری جامع ایران</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="top-bar">
-            <div id="date-time">در حال بارگذاری تاریخ و زمان...</div>
-            <div class="logo">IR NEW</div>
+<header>
+    <div class="top-nav">
+        <div class="container flex-between">
+            <div id="live-clock">در حال بارگذاری...</div>
+            <div class="logo">IR <span>NEW</span></div>
+            <div id="live-date"></div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">صفحه اصلی</a></li>
-                <li><a href="#economy">اقتصاد</a></li>
-                <li><a href="#accidents">حوادث</a></li>
-                <li><a href="#car">خودرو</a></li>
-                <li><a href="#sports">ورزش</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
+    <nav class="main-menu">
+        <ul class="container">
+            <li><a href="#">صفحه اصلی</a></li>
+            <li><a href="#economy">اقتصاد</a></li>
+            <li><a href="#incidents">حوادث</a></li>
+            <li><a href="#cars">خودرو</a></li>
+            <li><a href="#sports">ورزش</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section class="price-ticker">
-            <div class="ticker-item">💰 قیمت انس طلا: <span id="gold-price">درحال دریافت...</span></div>
-            <div class="ticker-item">🚗 پراید ۱۵۱: <span id="car-price">۳۱۰,۰۰۰,۰۰۰ تومان</span></div>
-        </section>
+<section class="ticker-wrapper">
+    <div class="container">
+        <div class="ticker-title">نرخ لحظه‌ای بازار:</div>
+        <div class="ticker-items">
+            <span>🥇 طلای ۱۸ عیار: <strong>۱۵,۸۵۰,۷۰۰</strong> تومان</span>
+            <span>🪙 سکه امامی: <strong>۱۶۴,۵۱۰,۰۰۰</strong> تومان</span>
+            <span>🚗 پژو ۲۰۷ اتومات: <strong>۱.۵۸</strong> میلیارد</span>
+            <span>🚘 تارا V4: <strong>۱.۶۹</strong> میلیارد</span>
+        </div>
+    </div>
+</section>
 
-        <section id="news-container" class="news-grid">
-            <article class="news-card">
-                <img src="https://picsum.photos/300/200?random=1" alt="خبر">
-                <div class="content">
-                    <span class="badge sports">ورزش</span>
-                    <h3>پیروزی مقتدرانه تیم ملی در مسابقات آسیایی</h3>
-                    <p>تیم ملی فوتبال ایران موفق شد با نتیجه قاطع حریف خود را شکست دهد...</p>
-                </div>
-            </article>
+<main class="container">
+    <h2 class="section-title" id="economy">اخبار اقتصادی</h2>
+    <div class="news-grid">
+        <article class="card">
+            <img src="https://picsum.photos/400/250?random=11" alt="اقتصاد">
+            <div class="card-body">
+                <h3>پیش‌بینی وضعیت بورس در هفته جاری</h3>
+                <p>کارشناسان معتقدند با تغییر نرخ بهره، بازار سرمایه جان دوباره‌ای خواهد گرفت...</p>
+                <span class="date">۷ دی ۱۴۰۴</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://picsum.photos/400/250?random=12" alt="طلا">
+            <div class="card-body">
+                <h3>چرا طلا امروز گران شد؟</h3>
+                <p>تحلیل بازار جهانی نشان می‌دهد انس طلا به ثبات رسیده اما در بازار داخلی...</p>
+                <span class="date">۷ دی ۱۴۰۴</span>
+            </div>
+        </article>
+    </div>
 
-            <article class="news-card">
-                <img src="https://picsum.photos/300/200?random=2" alt="خبر">
-                <div class="content">
-                    <span class="badge economy">اقتصاد</span>
-                    <h3>تغییرات جدید در بازار بورس تهران</h3>
-                    <p>شاخص کل بورس امروز با رشد چند هزار واحدی مواجه شد و معامله‌گران خوش‌بین هستند...</p>
-                </div>
-            </article>
+    <h2 class="section-title" id="cars">صنعت خودرو</h2>
+    <div class="news-grid">
+        <article class="card">
+            <img src="https://picsum.photos/400/250?random=13" alt="خودرو">
+            <div class="card-body">
+                <h3>سقوط آزاد قیمت خودروهای داخلی</h3>
+                <p>بررسی‌ها نشان می‌دهد قیمت پژو ۲۰۷ و تارا نسبت به هفته گذشته ریزش داشته است...</p>
+                <span class="date">امروز</span>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://picsum.photos/400/250?random=14" alt="واردات">
+            <div class="card-body">
+                <h3>لیست جدید خودروهای وارداتی اعلام شد</h3>
+                <p>وزارت صمت لیست نهایی برندهای مجاز برای واردات در سال جدید را منتشر کرد...</p>
+                <span class="date">۱ ساعت پیش</span>
+            </div>
+        </article>
+    </div>
 
-            <article class="news-card">
-                <img src="https://picsum.photos/300/200?random=3" alt="خبر">
-                <div class="content">
-                    <span class="badge car">خودرو</span>
-                    <h3>رونمایی از محصول جدید شرکت‌های داخلی</h3>
-                    <p>خودروی جدید با استانداردهای روز دنیا به زودی وارد بازار خواهد شد...</p>
-                </div>
-            </article>
-        </section>
-    </main>
+    <h2 class="section-title" id="sports">اخبار ورزشی</h2>
+    <div class="news-grid four-col">
+        <div class="mini-card">
+            <img src="https://picsum.photos/100/100?random=21">
+            <h4>نقل و انتقالات داغ لیگ برتر</h4>
+        </div>
+        <div class="mini-card">
+            <img src="https://picsum.photos/100/100?random=22">
+            <h4>آمادگی یوزها برای جام جهانی</h4>
+        </div>
+        <div class="mini-card">
+            <img src="https://picsum.photos/100/100?random=23">
+            <h4>برد مقتدرانه والیبال ایران</h4>
+        </div>
+        <div class="mini-card">
+            <img src="https://picsum.photos/100/100?random=24">
+            <h4>جدول رده‌بندی لیگ نوزدهم</h4>
+        </div>
+    </div>
+</main>
 
-    <footer>
-        <p>طراحی و توسعه توسط: <strong>حسین جمشیدی</strong></p>
-    </footer>
+<footer>
+    <div class="container">
+        <div class="footer-info">
+            <p>تمامی حقوق برای سایت IR NEW محفوظ است.</p>
+            <p class="creator">طراحی و اجرا: <span>حسین جمشیدی</span></p>
+        </div>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
