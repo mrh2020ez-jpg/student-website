@@ -1,3 +1,7 @@
-function showMessage() {
-    alert("این وب سایت به عنوان پروژه دانشگاهی طراحی شده است.");
+function welcome() {
+    alert("به فروشگاه قطعات کامپیوتری خوش آمدید!");
+}
+
+function sendMessage() {
+    alert("پیام شما با موفقیت ارسال شد.");
 }
