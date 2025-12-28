@@ -1,7 +1,6 @@
-function welcome() {
-    alert("به فروشگاه قطعات کامپیوتری خوش آمدید!");
-}
+let cartCount = 0;
 
-function sendMessage() {
-    alert("پیام شما با موفقیت ارسال شد.");
+function addToCart() {
+  cartCount++;
+  document.getElementById("cart-count").innerText = cartCount;
 }
