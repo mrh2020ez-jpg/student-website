@@ -2,37 +2,91 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>وب سایت شخصی | حسین جمشیدی</title>
+    <title>فروشگاه قطعات کامپیوتری</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ===== Header ===== -->
 <header>
-    <h1>سلام، من حسین جمشیدی هستم</h1>
-    <p>دانشجوی علاقه‌مند به طراحی وب</p>
-    <button onclick="showMessage()">درباره من</button>
+    <h1>فروشگاه آنلاین قطعات کامپیوتری</h1>
+    <p>خرید مطمئن، قیمت مناسب، کیفیت بالا</p>
 </header>
 
-<section class="about">
-    <h2>درباره من</h2>
+<!-- ===== Navigation ===== -->
+<nav>
+    <a href="#products">محصولات</a>
+    <a href="#about">درباره ما</a>
+    <a href="#contact">تماس با ما</a>
+</nav>
+
+<!-- ===== Banner ===== -->
+<section class="banner">
+    <h2>جدیدترین قطعات کامپیوتری</h2>
+    <p>پردازنده | کارت گرافیک | رم | مادربرد</p>
+    <button onclick="welcome()">مشاهده پیشنهاد ویژه</button>
+</section>
+
+<!-- ===== Products ===== -->
+<section id="products" class="products">
+    <h2>محصولات ما</h2>
+
+    <div class="product-list">
+        <div class="product">
+            <h3>کارت گرافیک RTX 3060</h3>
+            <p>مناسب گیمینگ و طراحی</p>
+            <span>قیمت: 25,000,000 تومان</span>
+        </div>
+
+        <div class="product">
+            <h3>پردازنده Core i7</h3>
+            <p>قدرت پردازش بالا</p>
+            <span>قیمت: 18,500,000 تومان</span>
+        </div>
+
+        <div class="product">
+            <h3>رم 16GB DDR4</h3>
+            <p>سرعت بالا، مناسب کارهای سنگین</p>
+            <span>قیمت: 3,200,000 تومان</span>
+        </div>
+
+        <div class="product">
+            <h3>هارد SSD 1TB</h3>
+            <p>افزایش سرعت سیستم</p>
+            <span>قیمت: 4,800,000 تومان</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about" class="about">
+    <h2>درباره فروشگاه</h2>
     <p>
-        این وب سایت به عنوان پروژه دانشگاهی طراحی شده و هدف آن
-        نمایش مهارت‌های پایه طراحی وب با HTML، CSS و JavaScript است.
+        این وب سایت یک فروشگاه آنلاین قطعات کامپیوتری است که به عنوان
+        پروژه دانشگاهی طراحی شده و هدف آن نمایش مهارت‌های طراحی وب
+        شامل HTML، CSS و JavaScript می‌باشد.
+    </p>
+    <p>
+        در این پروژه سعی شده طراحی مشابه فروشگاه‌های واقعی باشد
+        و اصول رابط کاربری رعایت شود.
     </p>
 </section>
 
-<section class="skills">
-    <h2>مهارت‌ها</h2>
-    <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>طراحی ریسپانسیو</li>
-    </ul>
+<!-- ===== Contact ===== -->
+<section id="contact" class="contact">
+    <h2>تماس با ما</h2>
+    <form>
+        <input type="text" placeholder="نام">
+        <input type="email" placeholder="ایمیل">
+        <textarea placeholder="پیام شما"></textarea>
+        <button type="button" onclick="sendMessage()">ارسال پیام</button>
+    </form>
 </section>
 
+<!-- ===== Footer ===== -->
 <footer>
-    <p>© طراحی و توسعه: حسین جمشیدی</p>
+    <p>طراحی و توسعه: حسین جمشیدی</p>
+    <p>پروژه دانشگاهی طراحی وب</p>
 </footer>
 
 <script src="script.js"></script>
