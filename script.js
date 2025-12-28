@@ -1,23 +1,22 @@
-function updateDate() {
+function updateDashboard() {
     const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateStr = new Intl.DateTimeFormat('fa-IR', options).format(now);
+    const timeString = now.toLocaleTimeString('fa-IR');
+    const dateString = new Intl.DateTimeFormat('fa-IR', { dateStyle: 'full' }).format(now);
     
-    document.getElementById('full-date').innerText = "امروز: " + dateStr;
+    document.getElementById('live-clock').innerHTML = `<span>${dateString}</span> | <strong>${timeString}</strong>`;
 }
 
-// اسکرول نرم برای لینک‌های منو
+// اسکرول نرم بین بخش‌ها
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({ top: targetElement.offsetTop - 50, behavior: 'smooth' });
         }
     });
 });
 
-updateDate();
+setInterval(updateDashboard, 1000);
+updateDashboard();
