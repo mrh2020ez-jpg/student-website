@@ -1,28 +1,29 @@
-// نمایش تاریخ و ساعت
-function updateTime() {
+function updateInterface() {
     const now = new Date();
-    
-    // تاریخ شمسی
-    const optionsShamsi = { year: 'numeric', month: 'long', day: 'numeric' };
-    const shamsiDate = new Intl.DateTimeFormat('fa-IR', optionsShamsi).format(now);
-    
-    // تاریخ میلادی
-    const miladiDate = now.toLocaleDateString('en-US');
-    
-    // ساعت
-    const time = now.toLocaleTimeString('fa-IR');
 
-    document.getElementById('date-time').innerHTML = 
-        `امروز: ${shamsiDate} | ${miladiDate} | ساعت: ${time}`;
+    // تنظیم تاریخ شمسی و میلادی
+    const shamsi = new Intl.DateTimeFormat('fa-IR', { dateStyle: 'full' }).format(now);
+    const miladi = now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    
+    document.getElementById('live-date').innerText = shamsi;
+    document.getElementById('live-clock').innerText = "میلادی: " + miladi + " | ساعت: " + now.toLocaleTimeString('fa-IR');
 }
 
-// شبیه‌سازی دریافت قیمت طلا (در پروژه واقعی از API استفاده می‌شود)
-function fetchPrices() {
-    // چون اکثر APIهای قیمت طلا نیاز به توکن دارند، برای پروژه دانشجویی این عدد را رندوم می‌گذاریم
-    const mockGoldPrice = (Math.random() * (2650 - 2600) + 2600).toFixed(0);
-    document.getElementById('gold-price').innerText = mockGoldPrice + " دلار";
-}
+// اجرای تابع هر ثانیه
+setInterval(updateInterface, 1000);
+updateInterface();
 
-setInterval(updateTime, 1000);
-updateTime();
-fetchPrices();
+// افکت اسکرول نرم برای منو
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
