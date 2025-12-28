@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IR NEW | خبرگزاری جامع ایران</title>
+    <title>IR-NEW | خبرگزاری جامع ایران</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <div class="top-nav">
-        <div class="container flex-between">
-            <div id="live-clock">در حال بارگذاری...</div>
-            <div class="logo">IR <span>NEW</span></div>
-            <div id="live-date"></div>
+    <div class="top-header">
+        <div class="container flex-row">
+            <span id="full-date"></span>
+            <div class="brand">IR-<span>NEW</span></div>
+            <div class="social-icons">اخبار لحظه‌ای ایران و جهان</div>
         </div>
     </div>
-    <nav class="main-menu">
+    <nav class="main-nav">
         <ul class="container">
             <li><a href="#">صفحه اصلی</a></li>
             <li><a href="#economy">اقتصاد</a></li>
@@ -27,111 +27,91 @@
     </nav>
 </header>
 
-<section class="ticker-wrapper">
-    <div class="container">
-        <div class="ticker-title">💎 بازار آنلاین:</div>
-        <div class="ticker-items">
-            <span>🥇 طلای ۱۸ عیار: <strong class="red">۴,۵۸۰,۰۰۰</strong> تومان</span>
-            <span>🪙 سکه امامی: <strong class="red">۵۱,۹۰۰,۰۰۰</strong> تومان</span>
-            <span>🚗 پژو ۲۰۷: <strong class="red">۹۸۰</strong> میلیون</span>
-            <span>🚘 تارا V4: <strong class="red">۱,۱۵۰</strong> میلیون</span>
-        </div>
-    </div>
-</section>
+<div class="container main-layout">
+    
+    <main class="news-content">
+        <section class="hero-news">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=800&auto=format&fit=crop" alt="اقتصاد ایران">
+            <div class="hero-overlay">
+                <span class="badge">خبر ویژه</span>
+                <h2>تحلیل جامع بازار سرمایه و پیش‌بینی قیمت ارز در سال جدید</h2>
+                <p>کارشناسان معتقدند با سیاست‌های جدید پولی، بازار به ثبات نسبی خواهد رسید...</p>
+            </div>
+        </section>
 
-<main class="container">
-    <h2 class="section-title" id="economy">اخبار اقتصادی</h2>
-    <div class="news-grid">
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/gold-bullion-bars-background_1150-17688.jpg" alt="قیمت طلا">
-            <div class="card-body">
-                <h3>نوسان شدید در بازار طلای تهران</h3>
-                <p>با افزایش انس جهانی، قیمت طلا در بازار ایران رکورد جدیدی ثبت کرد...</p>
-                <span class="date">امروز - ۱۰:۳۰</span>
+        <section id="economy" class="category-section">
+            <h2 class="sec-title">اخبار اقتصادی</h2>
+            <div class="grid-container">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1611974717482-48a66500b3c6?q=80&w=400&auto=format&fit=crop" alt="بورس">
+                    <h3>رشد شاخص کل در معاملات امروز</h3>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1518458082568-695899983920?q=80&w=400&auto=format&fit=crop" alt="طلا">
+                    <h3>نوسان قیمت طلا در بازارهای جهانی</h3>
+                </div>
             </div>
-        </article>
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/stock-market-exchange-graph-report-concept_53876-120531.jpg" alt="بورس">
-            <div class="card-body">
-                <h3>صعود پرقدرت شاخص بورس</h3>
-                <p>شاخص کل بورس تهران امروز با رشد ۲۰ هزار واحدی به کانال جدیدی وارد شد...</p>
-                <span class="date">امروز - ۱۲:۴۵</span>
-            </div>
-        </article>
-    </div>
+        </section>
 
-    <h2 class="section-title" id="cars">صنعت خودرو</h2>
-    <div class="news-grid">
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/modern-luxury-sedan-car-driving-street-night-generative-ai_188544-8052.jpg" alt="خودرو">
-            <div class="card-body">
-                <h3>واردات خودروهای کارکرده کلید خورد</h3>
-                <p>آیین‌نامه اجرایی واردات خودروهای دست دوم با عمر کمتر از ۵ سال ابلاغ شد...</p>
-                <span class="date">۲ ساعت پیش</span>
+        <section id="cars" class="category-section">
+            <h2 class="sec-title">صنعت خودرو</h2>
+            <div class="grid-container">
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=400&auto=format&fit=crop" alt="خودرو جدید">
+                    <h3>رونمایی از شاسی‌بلند جدید داخلی</h3>
+                </div>
+                <div class="news-card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=400&auto=format&fit=crop" alt="واردات">
+                    <h3>جزئیات جدید از طرح واردات خودرو</h3>
+                </div>
             </div>
-        </article>
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/electric-car-charging-station-road_1150-48225.jpg" alt="خودرو برقی">
-            <div class="card-body">
-                <h3>ایستگاه‌های شارژ خودرو برقی در تهران</h3>
-                <p>شهرداری تهران از نصب ۵۰ ایستگاه جدید شارژ سریع برای خودروهای برقی خبر داد...</p>
-                <span class="date">۴ ساعت پیش</span>
-            </div>
-        </article>
-    </div>
+        </section>
 
-    <h2 class="section-title" id="incidents">حوادث</h2>
-    <div class="news-grid">
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/firefighters-extinguishing-fire-building_23-2148854898.jpg" alt="حوادث">
-            <div class="card-body">
-                <h3>مهار آتش‌سوزی بزرگ در انبار غرب تهران</h3>
-                <p>سخنگوی آتش‌نشانی: این حادثه تلفات جانی نداشت و حریق پس از ۳ ساعت مهار شد...</p>
-                <span class="date">۱ ساعت پیش</span>
+        <section id="incidents" class="category-section">
+            <h2 class="sec-title">حوادث</h2>
+            <div class="list-news">
+                <div class="list-item">
+                    <img src="https://images.unsplash.com/photo-1516567727245-ad8c68f3ec93?q=80&w=150&auto=format&fit=crop" alt="آتش سوزی">
+                    <div class="text">
+                        <h4>مهار حریق در جنگل‌های شمال کشور</h4>
+                        <p>تیم‌های امدادی پس از ۱۰ ساعت تلاش موفق به مهار آتش شدند.</p>
+                    </div>
+                </div>
             </div>
-        </article>
-        <article class="card">
-            <img src="https://img.freepik.com/free-photo/traffic-accident-with-two-cars-road_23-2149363063.jpg" alt="تصادف">
-            <div class="card-body">
-                <h3>تصادف زنجیره‌ای در اتوبان قزوین</h3>
-                <p>لغزندگی جاده باعث برخورد ۱۰ خودرو شد. تیم‌های امدادی در محل حضور دارند...</p>
-                <span class="date">۳ ساعت پیش</span>
-            </div>
-        </article>
-    </div>
+        </section>
+    </main>
 
-    <h2 class="section-title" id="sports">اخبار ورزشی</h2>
-    <div class="news-grid four-col">
-        <div class="mini-card">
-            <img src="https://img.freepik.com/free-photo/soccer-players-action-on-professional-stadium_1150-14472.jpg">
-            <h4>برد حساس در دربی پایتخت</h4>
+    <aside class="sidebar">
+        <div class="widget">
+            <h3>📊 نرخ لحظه‌ای بازار</h3>
+            <ul class="price-list">
+                <li>طلا ۱۸ عیار: <span>۴,۶۸۰,۰۰۰</span></li>
+                <li>سکه امامی: <span>۵۲,۴۰۰,۰۰۰</span></li>
+                <li>دلار (مرکز مبادله): <span>۵۳,۲۰۰</span></li>
+                <li>تارا V4 اتومات: <span>۱,۱۹۰,۰۰۰,۰۰۰</span></li>
+                <li>پژو ۲۰۷: <span>۹۸۵,۰۰۰,۰۰۰</span></li>
+            </ul>
         </div>
-        <div class="mini-card">
-            <img src="https://img.freepik.com/free-photo/volleyball-action-on-stadium_1150-14470.jpg">
-            <h4>درخشش والیبالیست‌ها در پاریس</h4>
+        
+        <div class="widget">
+            <h3>⚽ ورزش ایران</h3>
+            <div class="sports-mini">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=300&auto=format&fit=crop" alt="فوتبال">
+                <h4>لیست جدید تیم ملی اعلام شد</h4>
+            </div>
         </div>
-        <div class="mini-card">
-            <img src="https://img.freepik.com/free-photo/professional-wrestling-match-stadium_1150-14475.jpg">
-            <h4>کشتی‌گیران ایرانی بر بام جهان</h4>
-        </div>
-        <div class="mini-card">
-            <img src="https://img.freepik.com/free-photo/tennis-action-on-professional-court_1150-14473.jpg">
-            <h4>نتایج مسابقات تنیس اوپن</h4>
-        </div>
-    </div>
-</main>
+    </aside>
+</div>
 
 <footer>
-    <div class="container">
-        <div class="footer-flex">
-            <div>
-                <h3>درباره IR NEW</h3>
-                <p>مرجع رسمی اخبار و قیمت‌های لحظه‌ای بازار ایران.</p>
-            </div>
-            <div class="developer">
-                <p>طراح و توسعه‌دهنده:</p>
-                <h4>حسین جمشیدی</h4>
-            </div>
+    <div class="container footer-content">
+        <div class="about">
+            <h3>درباره IR-NEW</h3>
+            <p>این پروژه به عنوان فعالیت کلاسی طراحی شده است.</p>
+        </div>
+        <div class="credit">
+            <p>طراح و توسعه‌دهنده:</p>
+            <h2 class="my-name">حسین جمشیدی</h2>
         </div>
     </div>
 </footer>
