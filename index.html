@@ -1,53 +1,40 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlobalTech Store</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>GlobalTech | فروشگاه آنلاین</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>GlobalTech Store</h1>
-  <input type="text" id="search" placeholder="جستجوی محصول...">
-  <a href="cart.html" class="cart-link">🛒 سبد خرید (<span id="cart-count">0</span>)</a>
+  <div class="logo">GlobalTech</div>
+  <input type="text" placeholder="جستجو در محصولات...">
+  <button class="cart-btn">🛒 سبد خرید</button>
 </header>
 
-<section class="products" id="product-list">
-  <!-- Product -->
-  <div class="product" data-name="RTX 4070">
-    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
-    <h3>RTX 4070</h3>
-    <p>کارت گرافیک حرفه‌ای</p>
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <span>45,000,000 تومان</span>
-    <button onclick="addToCart('RTX 4070')">افزودن به سبد</button>
-  </div>
+<main>
+  <h2>محصولات پیشنهادی</h2>
 
-  <div class="product" data-name="MacBook Pro">
-    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5">
-    <h3>MacBook Pro</h3>
-    <p>لپ‌تاپ حرفه‌ای</p>
-    <div class="stars">⭐⭐⭐⭐</div>
-    <span>95,000,000 تومان</span>
-    <button onclick="addToCart('MacBook Pro')">افزودن به سبد</button>
-  </div>
+  <div class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/200">
+      <h3>لپ‌تاپ حرفه‌ای</h3>
+      <p>35,000,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد</button>
+    </div>
 
-  <div class="product" data-name="SSD 1TB">
-    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
-    <h3>SSD 1TB</h3>
-    <p>حافظه NVMe پرسرعت</p>
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <span>4,900,000 تومان</span>
-    <button onclick="addToCart('SSD 1TB')">افزودن به سبد</button>
+    <div class="product">
+      <img src="https://via.placeholder.com/200">
+      <h3>گوشی هوشمند</h3>
+      <p>18,000,000 تومان</p>
+      <button onclick="addToCart()">افزودن به سبد</button>
+    </div>
   </div>
-
-</section>
+</main>
 
 <footer>
-  <p>© 2025 GlobalTech Store</p>
-  <p>طراحی و توسعه: حسین جمشیدی</p>
+  <p>© طراحی شده توسط حسین جمشیدی</p>
 </footer>
 
 <script src="script.js"></script>
