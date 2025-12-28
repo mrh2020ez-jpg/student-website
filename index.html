@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سامانه هوشمند IR-Monitor | حسین جمشیدی</title>
+    <title>سامانه هوشمند پایش IR-Monitor | حسین جمشیدی</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,11 +11,13 @@
     <aside class="sidebar">
         <div class="logo">IR-<span>MONITOR</span></div>
         <nav>
-            <a href="#" class="active">📊 داشبورد اصلی</a>
-            <a href="#economy">📈 تحلیل اقتصادی</a>
-            <li><a href="#cars">🚗 پایش بازار خودرو</a></li>
-            <li><a href="#tech">🛡️ امنیت و حوادث</a></li>
-            <li><a href="#sports">🏆 اخبار ورزشی</a></li>
+            <ul>
+                <li><a href="#" class="active">📊 داشبورد اصلی</a></li>
+                <li><a href="#economy">📈 تحلیل اقتصادی</a></li>
+                <li><a href="#cars">🚗 پایش بازار خودرو</a></li>
+                <li><a href="#tech">🛡️ امنیت و حوادث</a></li>
+                <li><a href="#sports">🏆 اخبار ورزشی</a></li>
+            </ul>
         </nav>
         <div class="user-info">
             <p>توسعه‌دهنده سیستم:</p>
@@ -26,49 +28,49 @@
     <main class="main-content">
         <header class="top-header">
             <div class="search-box">جستجو در اخبار و شاخص‌ها...</div>
-            <div id="live-clock"></div>
+            <div id="live-clock">در حال بارگذاری زمان...</div>
         </header>
 
         <section class="stats-cards">
             <div class="card-stat">
                 <span>طلای ۱۸ عیار</span>
                 <h3>۴,۷۲۰,۰۰۰ تومان</h3>
-                <small class="up">+۱.۲٪</small>
+                <small class="up">+۱.۲٪ افزایش</small>
             </div>
             <div class="card-stat">
                 <span>شاخص کل بورس</span>
                 <h3>۲,۱۵۰,۴۳۰</h3>
-                <small class="down">-۰.۵٪</small>
+                <small class="down">-۰.۵٪ کاهش</small>
             </div>
             <div class="card-stat">
-                <span>دلار صرافی ملی</span>
+                <span>دلار (مرکز مبادله)</span>
                 <h3>۵۴,۱۰۰ تومان</h3>
-                <small class="up">+۰.۸٪</small>
+                <small class="up">+۰.۸٪ افزایش</small>
             </div>
         </section>
 
         <section class="news-grid">
             <article class="main-article" id="economy">
-                <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop" alt="بورس">
+                <img src="https://images.unsplash.com/photo-1611974717482-48a66500b3c6?q=80&w=800&auto=format&fit=crop" alt="تحلیل بورس">
                 <div class="info">
                     <span class="tag">ویژه اقتصاد</span>
-                    <h2>تحلیل ورود نقدینگی هوشمند به بازار سرمایه</h2>
-                    <p>گزارش‌ها نشان می‌دهد در ۲۴ ساعت گذشته حجم معاملات خرد به شدت افزایش یافته است...</p>
+                    <h2>تحلیل نوسانات اخیر بازار سرمایه</h2>
+                    <p>گزارش‌های میدانی حاکی از افزایش تقاضا در گروه‌های صنعتی و پتروشیمی است...</p>
                 </div>
             </article>
 
             <div class="side-articles">
                 <div class="mini-news" id="cars">
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=200&auto=format&fit=crop">
-                    <h4>پیش‌فروش محصولات جدید از فردا</h4>
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=200&auto=format&fit=crop" alt="خودرو">
+                    <h4>آخرین وضعیت قیمت خودرو در بازار آزاد</h4>
                 </div>
                 <div class="mini-news" id="tech">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=200&auto=format&fit=crop">
-                    <h4>پایش حملات سایبری به زیرساخت‌ها</h4>
+                    <img src="https://images.unsplash.com/photo-1516567727245-ad8c68f3ec93?q=80&w=200&auto=format&fit=crop" alt="حوادث">
+                    <h4>گزارش حوادث جاده‌ای در محورهای شمالی</h4>
                 </div>
                 <div class="mini-news" id="sports">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop">
-                    <h4>لیست نهایی تیم ملی برای مسابقات</h4>
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=200&auto=format&fit=crop" alt="ورزش">
+                    <h4>زمان برگزاری مسابقات نهایی مشخص شد</h4>
                 </div>
             </div>
         </section>
