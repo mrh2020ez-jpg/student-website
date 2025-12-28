@@ -1,19 +1,23 @@
-function updateLiveInfo() {
+function updateDate() {
     const now = new Date();
-    
-    // تاریخ شمسی با فرمت رسمی
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const shamsiDate = new Intl.DateTimeFormat('fa-IR', options).format(now);
+    const dateStr = new Intl.DateTimeFormat('fa-IR', options).format(now);
     
-    // ساعت
-    const time = now.toLocaleTimeString('fa-IR');
-    
-    // تاریخ میلادی برای گوشه سایت
-    const miladi = now.toLocaleDateString('en-US');
-
-    document.getElementById('live-date').innerText = shamsiDate;
-    document.getElementById('live-clock').innerText = `ساعت: ${time} | میلادی: ${miladi}`;
+    document.getElementById('full-date').innerText = "امروز: " + dateStr;
 }
 
-setInterval(updateLiveInfo, 1000);
-updateLiveInfo();
+// اسکرول نرم برای لینک‌های منو
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+updateDate();
