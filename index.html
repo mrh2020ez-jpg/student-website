@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GlobalTech Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -9,60 +10,37 @@
 
 <header>
   <h1>GlobalTech Store</h1>
-  <p>فروشگاه تخصصی تجهیزات دیجیتال</p>
-  <div class="cart-btn">
-    🛒 سبد خرید (<span id="cart-count">0</span>)
-  </div>
+  <input type="text" id="search" placeholder="جستجوی محصول...">
+  <a href="cart.html" class="cart-link">🛒 سبد خرید (<span id="cart-count">0</span>)</a>
 </header>
 
-<section class="products">
-
-  <div class="product">
+<section class="products" id="product-list">
+  <!-- Product -->
+  <div class="product" data-name="RTX 4070">
     <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
     <h3>RTX 4070</h3>
     <p>کارت گرافیک حرفه‌ای</p>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
     <span>45,000,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
+    <button onclick="addToCart('RTX 4070')">افزودن به سبد</button>
   </div>
 
-  <div class="product">
+  <div class="product" data-name="MacBook Pro">
     <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5">
     <h3>MacBook Pro</h3>
-    <p>لپ‌تاپ حرفه‌ای برنامه‌نویسی</p>
+    <p>لپ‌تاپ حرفه‌ای</p>
+    <div class="stars">⭐⭐⭐⭐</div>
     <span>95,000,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
+    <button onclick="addToCart('MacBook Pro')">افزودن به سبد</button>
   </div>
 
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a">
-    <h3>Gaming Keyboard</h3>
-    <p>کیبورد مکانیکال RGB</p>
-    <span>3,200,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
-  </div>
-
-  <div class="product">
+  <div class="product" data-name="SSD 1TB">
     <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
     <h3>SSD 1TB</h3>
-    <p>حافظه پرسرعت NVMe</p>
+    <p>حافظه NVMe پرسرعت</p>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
     <span>4,900,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
-  </div>
-
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf">
-    <h3>Monitor 27"</h3>
-    <p>مانیتور 4K حرفه‌ای</p>
-    <span>18,000,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
-  </div>
-
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
-    <h3>PC Case RGB</h3>
-    <p>کیس گیمینگ حرفه‌ای</p>
-    <span>6,500,000 تومان</span>
-    <button onclick="addToCart()">افزودن به سبد</button>
+    <button onclick="addToCart('SSD 1TB')">افزودن به سبد</button>
   </div>
 
 </section>
@@ -70,7 +48,6 @@
 <footer>
   <p>© 2025 GlobalTech Store</p>
   <p>طراحی و توسعه: حسین جمشیدی</p>
-  <p>پروژه دانشگاهی طراحی وب</p>
 </footer>
 
 <script src="script.js"></script>
