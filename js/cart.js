@@ -8,8 +8,8 @@ function addToCart(name, price) {
 }
 
 function updateCartCount() {
-    const count = document.getElementById("cart-count");
-    if (count) count.innerText = cart.length;
+    const el = document.getElementById("cart-count");
+    if (el) el.innerText = cart.length;
 }
 
 function showCart() {
