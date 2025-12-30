@@ -1,73 +1,78 @@
 body {
-  margin: 0;
-  font-family: Tahoma;
-  background: #f5f5f5;
-  direction: rtl;
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    background: #f5f5f5;
 }
 
-header {
-  background: #ef394e;
-  padding: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ef394e;
+    padding: 15px;
+    color: white;
 }
 
-.logo {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
+.header input {
+    width: 40%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
 }
 
-header input {
-  flex: 1;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
+.header a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
 }
 
-.cart-btn {
-  background: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
+/* Banner */
+.banner {
+    background: white;
+    padding: 40px;
+    text-align: center;
 }
 
-main {
-  padding: 20px;
-}
-
+/* Products */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+    padding: 30px;
 }
 
-.product {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
+.product-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
-.product img {
-  width: 100%;
+.product-card {
+    background: white;
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.product button {
-  background: #ef394e;
-  color: white;
-  border: none;
-  padding: 8px;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 5px;
+.product-card img {
+    width: 100%;
 }
 
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px;
+.product-card button {
+    background: #ef394e;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
 }
