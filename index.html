@@ -1,42 +1,62 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>GlobalTech | فروشگاه آنلاین</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>فروشگاه آنلاین | پروژه دانشگاهی</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">GlobalTech</div>
-  <input type="text" placeholder="جستجو در محصولات...">
-  <button class="cart-btn">🛒 سبد خرید</button>
+<!-- Header -->
+<header class="header">
+    <div class="logo">فروشگاه آنلاین</div>
+    <input type="text" placeholder="جستجو در محصولات...">
+    <nav>
+        <a href="#">ورود</a>
+        <a href="#">سبد خرید</a>
+    </nav>
 </header>
 
-<main>
-  <h2>محصولات پیشنهادی</h2>
+<!-- Banner -->
+<section class="banner">
+    <h1>تجربه خرید آنلاین هوشمند</h1>
+    <p>پروژه نمونه فروشگاه اینترنتی (دانشگاهی)</p>
+</section>
 
-  <div class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/200">
-      <h3>لپ‌تاپ حرفه‌ای</h3>
-      <p>35,000,000 تومان</p>
-      <button onclick="addToCart()">افزودن به سبد</button>
+<!-- Products -->
+<section class="products">
+    <h2>محصولات پیشنهادی</h2>
+
+    <div class="product-list">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>گوشی هوشمند</h3>
+            <p>12,500,000 تومان</p>
+            <button>افزودن به سبد</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>لپ‌تاپ</h3>
+            <p>38,000,000 تومان</p>
+            <button>افزودن به سبد</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3>هدفون بی‌سیم</h3>
+            <p>2,300,000 تومان</p>
+            <button>افزودن به سبد</button>
+        </div>
     </div>
+</section>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/200">
-      <h3>گوشی هوشمند</h3>
-      <p>18,000,000 تومان</p>
-      <button onclick="addToCart()">افزودن به سبد</button>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <p>© طراحی شده توسط حسین جمشیدی</p>
+<!-- Footer -->
+<footer class="footer">
+    <p>طراحی و پیاده‌سازی: حسین جمشیدی</p>
+    <p>پروژه دانشگاهی – بدون استفاده تجاری</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
