@@ -1,66 +1,63 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>MyShop</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<section class="products">
+  <h2>محصولات پیشنهادی</h2>
 
-<header class="top-bar">
-    <a href="cart.html" style="color:white;text-decoration:none">
-        🛒 سبد خرید (<span id="cart-count">0</span>)
-    </a>
-    <h2>MyShop</h2>
-</header>
+  <div class="product-list">
 
-<section class="hero">
-    <h1>تجربه خرید آنلاین هوشمند</h1>
-    <p>پروژه نمونه فروشگاه اینترنتی (دانشجویی)</p>
+    <!-- تلویزیون -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04" alt="تلویزیون 55 اینچ">
+      </div>
+      <div class="product-info black-bg">
+        <h3>تلویزیون 55 اینچ</h3>
+        <p class="price">32,000,000 تومان</p>
+        <button onclick="addToCart('تلویزیون 55 اینچ', 32000000)">
+          افزودن به سبد خرید
+        </button>
+      </div>
+    </div>
+
+    <!-- لپتاپ -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="لپتاپ">
+      </div>
+      <div class="product-info black-bg">
+        <h3>لپتاپ</h3>
+        <p class="price">58,000,000 تومان</p>
+        <button onclick="addToCart('لپتاپ', 58000000)">
+          افزودن به سبد خرید
+        </button>
+      </div>
+    </div>
+
+    <!-- گوشی -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="گوشی هوشمند">
+      </div>
+      <div class="product-info black-bg">
+        <h3>گوشی هوشمند</h3>
+        <p class="price">22,500,000 تومان</p>
+        <button onclick="addToCart('گوشی هوشمند', 22500000)">
+          افزودن به سبد خرید
+        </button>
+      </div>
+    </div>
+
+    <!-- ساعت هوشمند (جایگزین هدفون) -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b" alt="ساعت هوشمند">
+      </div>
+      <div class="product-info black-bg">
+        <h3>ساعت هوشمند</h3>
+        <p class="price">4,800,000 تومان</p>
+        <button onclick="addToCart('ساعت هوشمند', 4800000)">
+          افزودن به سبد خرید
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
-
-<h2 class="section-title">محصولات پیشنهادی</h2>
-
-<div class="products">
-
-    <div class="product">
-        <div class="product-media">
-            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1c1">
-            <h3>هدفون بی‌سیم</h3>
-        </div>
-        <p>2,300,000 تومان</p>
-        <button onclick="addToCart('هدفون بی‌سیم',2300000)">افزودن به سبد خرید</button>
-    </div>
-
-    <div class="product">
-        <div class="product-media">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-            <h3>گوشی هوشمند</h3>
-        </div>
-        <p>22,500,000 تومان</p>
-        <button onclick="addToCart('گوشی هوشمند',12500000)">افزودن به سبد خرید</button>
-    </div>
-
-    <div class="product">
-        <div class="product-media">
-            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
-            <h3>لپ‌تاپ</h3>
-        </div>
-        <p>58,000,000 تومان</p>
-        <button onclick="addToCart('لپ‌تاپ',38000000)">افزودن به سبد خرید</button>
-    </div>
-
-    <div class="product">
-        <div class="product-media">
-            <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6">
-            <h3>تلویزیون 55 اینچ</h3>
-        </div>
-        <p>32,000,000 تومان</p>
-        <button onclick="addToCart('تلویزیون 55 اینچ',25000000)">افزودن به سبد خرید</button>
-    </div>
-
-</div>
-
-<script src="js/cart.js"></script>
-</body>
-</html>
