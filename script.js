@@ -1,6 +1,7 @@
-let cartCount = 0;
+const buttons = document.querySelectorAll("button");
 
-function addToCart() {
-  cartCount++;
-  alert("محصول به سبد خرید اضافه شد 🛒\nتعداد: " + cartCount);
-}
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        alert("محصول به سبد خرید اضافه شد (دموی دانشگاهی)");
+    });
+});
