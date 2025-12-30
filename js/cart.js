@@ -1,5 +1,6 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+
 updateCartCount();
 
 function addToCart(name, price) {
