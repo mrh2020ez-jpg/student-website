@@ -1,41 +1,36 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  alert("به سبد خرید اضافه شد");
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert("به سبد خرید اضافه شد");
 }
 
 function updateCartCount() {
-  const count = document.getElementById("cart-count");
-  if (count) count.innerText = cart.length;
+    const count = document.getElementById("cart-count");
+    if (count) count.innerText = cart.length;
 }
 
-function loadCart() {
-  const list = document.getElementById("cart-items");
-  const totalEl = document.getElementById("total-price");
-  if (!list) return;
+function showCart() {
+    const container = document.getElementById("cart-items");
+    if (!container) return;
 
-  list.innerHTML = "";
-  let total = 0;
+    container.innerHTML = "";
+    let total = 0;
 
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.innerText = `${item.name} - ${item.price.toLocaleString()} تومان`;
-    list.appendChild(li);
-    total += item.price;
-  });
+    cart.forEach(item => {
+        total += item.price;
+        container.innerHTML += `
+            <div class="cart-item">
+                <span>${item.name}</span>
+                <span>${item.price.toLocaleString()} تومان</span>
+            </div>
+        `;
+    });
 
-  totalEl.innerText = total.toLocaleString();
-}
-
-function clearCart() {
-  localStorage.removeItem("cart");
-  cart = [];
-  loadCart();
-  updateCartCount();
+    container.innerHTML += `<h3>جمع کل: ${total.toLocaleString()} تومان</h3>`;
 }
 
 updateCartCount();
-loadCart();
+showCart();
