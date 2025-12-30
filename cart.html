@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>سبد خرید</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="top-bar">
-  <strong>سبد خرید</strong>
-  <a href="index.html">⬅ بازگشت</a>
+<header class="header">
+    <h2>سبد خرید</h2>
+    <a href="index.html">⬅ بازگشت</a>
 </header>
 
-<section class="cart-page">
-  <h2>محصولات انتخاب‌شده</h2>
-  <ul id="cart-items"></ul>
-  <p class="total">مجموع: <span id="total-price">0</span> تومان</p>
-  <button onclick="clearCart()">حذف همه</button>
-</section>
+<div class="cart" id="cart-items"></div>
 
 <script src="js/cart.js"></script>
 </body>
