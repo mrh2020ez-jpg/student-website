@@ -1,7 +1,9 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+updateCartCount();
+
 function addToCart(name, price) {
-    const item = cart.find(p => p.name === name);
+    let item = cart.find(p => p.name === name);
     if (item) {
         item.qty++;
     } else {
@@ -10,61 +12,49 @@ function addToCart(name, price) {
     saveCart();
 }
 
-function increase(name) {
-    cart.find(p => p.name === name).qty++;
-    saveCart();
-}
-
-function decrease(name) {
-    const item = cart.find(p => p.name === name);
-    item.qty--;
-    if (item.qty === 0) {
-        cart = cart.filter(p => p.name !== name);
-    }
-    saveCart();
-}
-
 function removeItem(name) {
     cart = cart.filter(p => p.name !== name);
     saveCart();
+    renderCart();
+}
+
+function changeQty(name, amount) {
+    let item = cart.find(p => p.name === name);
+    if (!item) return;
+    item.qty += amount;
+    if (item.qty <= 0) removeItem(name);
+    saveCart();
+    renderCart();
 }
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-    showCart();
 }
 
 function updateCartCount() {
-    const el = document.getElementById("cart-count");
-    if (el) {
-        el.innerText = cart.reduce((s, i) => s + i.qty, 0);
-    }
+    let count = cart.reduce((sum, i) => sum + i.qty, 0);
+    let el = document.getElementById("cart-count");
+    if (el) el.innerText = count;
 }
 
-function showCart() {
-    const box = document.getElementById("cart-items");
+function renderCart() {
+    let box = document.getElementById("cart-items");
     if (!box) return;
 
     box.innerHTML = "";
-    let total = 0;
-
     cart.forEach(item => {
-        total += item.price * item.qty;
         box.innerHTML += `
-        <div class="cart-item">
-            <span>${item.name}</span>
-            <div>
-                <button onclick="decrease('${item.name}')">-</button>
-                ${item.qty}
-                <button onclick="increase('${item.name}')">+</button>
-                <button onclick="removeItem('${item.name}')">❌</button>
+            <div class="cart-item">
+                <span>${item.name} (${item.qty})</span>
+                <div>
+                    <button onclick="changeQty('${item.name}',1)">+</button>
+                    <button onclick="changeQty('${item.name}',-1)">-</button>
+                    <button onclick="removeItem('${item.name}')">حذف</button>
+                </div>
             </div>
-        </div>`;
+        `;
     });
-
-    box.innerHTML += `<h3>جمع کل: ${total.toLocaleString()} تومان</h3>`;
 }
 
-updateCartCount();
-showCart();
+renderCart();
