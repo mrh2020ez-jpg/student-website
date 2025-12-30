@@ -4,7 +4,7 @@ function addToCart(name, price) {
   cart.push({ name, price });
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
-  alert(name + " به سبد خرید اضافه شد 🛒");
+  alert("به سبد خرید اضافه شد");
 }
 
 function updateCartCount() {
@@ -14,18 +14,20 @@ function updateCartCount() {
 
 function loadCart() {
   const list = document.getElementById("cart-items");
-  const total = document.getElementById("total-price");
+  const totalEl = document.getElementById("total-price");
+  if (!list) return;
+
   list.innerHTML = "";
-  let sum = 0;
+  let total = 0;
 
   cart.forEach(item => {
     const li = document.createElement("li");
-    li.innerText = item.name + " - " + item.price.toLocaleString() + " تومان";
+    li.innerText = `${item.name} - ${item.price.toLocaleString()} تومان`;
     list.appendChild(li);
-    sum += item.price;
+    total += item.price;
   });
 
-  total.innerText = sum.toLocaleString();
+  totalEl.innerText = total.toLocaleString();
 }
 
 function clearCart() {
@@ -36,3 +38,4 @@ function clearCart() {
 }
 
 updateCartCount();
+loadCart();
